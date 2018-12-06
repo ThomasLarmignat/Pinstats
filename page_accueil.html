@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Pinstats | Statistiques d'un compte Pinterest</title>
+		<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css"/>
+		<link rel="stylesheet" href="css/styleGrid.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="./javascript/controller/jquery.nested.js"></script>
+		<script src="./javascript/controller/selectors.js"></script>
+		<script src="./javascript/model/convert.js"></script>
+		<script src="./javascript/controller/sorts.js"></script>
+
+		<script src="./javascript/controller/charts.js"></script>
+	</head>
+	<link rel="shortcut icon" type="image/x-icon" href="./images/verySmall.png" />
+	<body ng-app="MonApp">
+
+	<script>
+$(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop':  $target.offset().top
+        }, 1200, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
+
+
+	$('#hautPage').click(function(){
+    $("html, body").animate({scrollTop : 0}, 1200);
+});
+
+$('.count').each(function () {
+    $(this).prop('Counter', 0).animate({
+            Counter: $(this).data('value')
+        }, {
+        duration: 1000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(this.Counter.toFixed(2));
+        }
+    });
+});
+});
+</script>
+<!--MENU-->
+
+
+
+<div id="top" style="visibility: hidden;">
+</div>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container-fluid">
+	    <ul class="nav navbar-header" style="display:inline;" >
+	      <li style="display:inline;" ><a href="#top"><img src="./images/smallLogo.png" width="25px"  height = "auto"></img></a></li>
+	      <li style="display:inline;" ><a href="#divUser">Informations du compte</a></li>
+	      <li style="display:inline;" ><a href="#divStats">Statistiques</a></li>
+	      <li style="display:inline;" ><a href="#divImage">Pins</a></li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+	 <img id="fond"src="./images/fond.jpg" height = "100%"/>
+		<!--CADRE PRINCIPAL-->
+	<div id="global" ng-controller="demo">
+
+	<div class="centrer" >
+		<img id="titre" src="./images/logov1.png" width="200px"  height = "auto" style="text-align:center;margin-top: 17%;"></img>
+		<div id="nomUtilisateur">
+			<h3 style="color:white">Entrez le nom d'utilisateur : </h3>
+			</br>
+			<div class="recherche_p" id="rechercher">
+				<input id="nomUtil" ng-model="nomutil" type="text" placeholder="Nom d'utilisateur" />
+				<button id="nomUtil-btn" name="Rechercher" ng-click="run()">Rechercher</button>
+			</div>
+			<div id="loading" align="center" style="visibility: hidden;">
+				<div class="lds-css ng-scope" style="width: 200px; height: 1px;"><div class="lds-ellipsis"><div><div></div>
+				</div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div></div>
+			</div>
+			</div>
+		</div>
+		<div id="myModal" class="modal" width="300px">
+	  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <img id = "photoModal" width="300px"  style="text-align:center"><img>
+		<div id="cadreModal" class="cadre center" style="text-align:center">
+		    <h2 style="color:white">Informations pin :</h2>
+				<p id = "infosDesc" style="color:white"></p>
+				<p id = "infosTaille" style="color:white"></p>
+				<p id = "infosDate" style="color:white"></p>
+				<p id = "infosRepins" style="color:white"></p>
+		</div>
+	  </div>
+	</div>
+
+	<div id="invisible" style="display: none;">
+	<div id="divUser" style="visibility: hidden;">
+fgwbj
+	</div>
+		<h1 class="titrePartie"> <img src="./images/userlogo.png" width="80px"  height = "auto"></img> Informations du compte</h1>
+		<div id="cadre1" class="row cadre centrer" style ="background-color:white">
+				<div id="infosPerso" class=" col-3" style ="background-color:#333333">
+						<img id = "photoProfil"  ng-src="{{photoP}}" width = 90px height=auto style = "border-radius:50%;padding-top: 10%;">
+						<div class="col-12"><p ng-bind="infosNom"></p></div>
+						<div class="col-12"><p ng-bind="infoID"></p></div>
+
+						<div class="col-12" style="display:inline;"><img src="./images/locallogo.jpg" width="50px"  height = "auto" style="display:inline;"> <p ng-bind="infoLieu" style="display:inline;"></p></div>
+
+
+						<div class= "col-12" style="display:inline;"><p style="display:inline;" ng-bind="infoDate"> </p></div>
+						<div class="col-12"><p ng-bind="infoUrl"></p></div>
+
+				</div>
+
+				<div class="col-9 row">
+					<div class="col" style= "margin-top: 30%;">Nombre d'épingles<p class="chiffre" ng-bind="infosPins"></p></div>
+					<div class="col" style= "margin-top: 30%;">Nombre d'abonnés<p class="chiffre" ng-bind="infosSuis"></p></div>
+					<div class="col" style= "margin-top: 30%;">Nombre d'abonnements<p  class="chiffre" ng-bind="infoSuivis"></p></div>
+				</div>
+				<div id="description" class="col-12" style="display:inline;background-color:#333333;"><p style="display:inline;" ng-bind="infoB"></p></div>
+		</div>
+
+			<div id="divStats" style="visibility: hidden;margin-top: 20%;">
+fgwbj
+	</div>
+		<h1 class="titrePartie"><img src="./images/statlogo.png" width="80px"  height = "auto">Statistiques</h1>
+		<div id="cadre2"  align="center" class="cadre centrer" style ="background-color:white">
+			<div>
+				<div id="chartContainer"></div>
+				<div id="chartContainerColor"></div>
+			</div>
+			<div id="chartContainerEvol" style="height:300px; width: 600;"></div>
+		</div>
+
+
+
+		<div id="divImage" style="visibility: hidden;margin-top: 10%;">
+fgwbj
+	</div>
+		<h1 class="titrePartie"><img src="./images/pinlogo.png" width="80px"  height = "auto">Pins</h1>
+		<div id="cadre3" class="cadre centrer" style ="background-color:white">
+			<div id="tri">
+			</br>
+				<div class="row select">
+					<div class="col">
+						<select name="sele" id ="couleur">
+							<option value="default">Choisir une couleur</option>
+							<option value="Noir">Noir</option>
+							<option value="Blanc">Blanc</option>
+							<option value="Vert">Vert/Jaune</option>
+							<option value="Rouge">Rouge/Marron</option>
+							<option value="Gris">Gris</option>
+							<option value="Bleu">Bleu</option>
+						</select>
+					</div>
+					<div class="col">
+						<select id ="taille">
+							<option value="default">Choisir une taille</option>
+							<option value="Grandes">Grandes</option>
+							<option value="Moyennes">Moyennes</option>
+							<option value="Petites">Petites</option>
+							<option value="Longues">Longues</option>
+							<option value="Larges">Larges</option>
+						</select>
+					</div>
+					<div class="col">
+					<select id ="board"  ng-model="board" ng-options="b for b in boards"></select>
+					</div>
+				</div>
+
+				</br>
+				</br>
+				<div class="row">
+					<div class="col">
+						<label class="radioButton">Aucun tri
+							<input type="radio" id = "triDefault" name="radio" ng-model="valueTriDefault" ng-value=true>
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="col"><label class="radioButton">Tri par taille
+							<input type="radio" id="triTaille"  name="radio" ng-model="valueTriSize" ng-value=true>
+							<span class="checkmark"></span>
+						</label></div>
+					<div class="col"><label class="radioButton">Tri par date de sauvegarde
+							<input type="radio" id ="triDate" name="radio" ng-model="valueTriDate" ng-value=true>
+							<span class="checkmark"></span>
+						</label></div>
+					<div class="col"><label class="radioButton">Tri par popularité
+							<input type="radio" id="triPopularité" name="radio"  ng-model="valueTriPop" ng-value=true>
+							<span class="checkmark"></span>
+						</label></div>
+
+				</div>
+				</br>
+			</div>
+
+			<button type="button" class="myButton"  id="valider" ng-click="runImages()">Valider</button>
+			<div id=MyHead style="padding-top: 5%;" ></div>
+			<div id="container"></div>
+			</div>
+			<footer>
+					<font color="white">Conctats : pinstats@gmail.com</font>
+
+
+			</footer>
+		</div>
+
+	</div>
+  	</body>
+			<script type="text/javascript" src="./javascript/model/script.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<script src="./javascript/controller/app.js"></script>
+			<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</html>

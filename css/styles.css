@@ -1,0 +1,591 @@
+#infosPerso p {
+  color: white;
+}
+
+#description p {
+  color: white;
+}
+
+
+footer{
+      background:#333333;
+      bottom: 0;
+      width:100%;
+      margin-top:5%;
+      height:50px;
+}
+/*
+* ------------------------------------------- M E N U ---------------------------------------------------------------------------------------------
+*
+*/
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+
+
+
+/*
+* ------------------------------------------- C O N T E N U    P A G E ---------------------------------------------------------------------------------------------
+*
+*/
+.recherche_p {
+  background-color: #333333;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #333333;
+  padding: 10px 10px 10px 10px;
+  margin: 0 auto;
+  width: 30%;
+}
+
+/* Champ de saisie */
+#rechercher #nomUtil {
+  background-color: #ffffff;   /* Couleur de fond */
+  border-style: solid;   /* Style de la bordure  */
+  border-width: 1px;   /* Epaisseur de la bordure  */
+  border-color: #dddddd;   /* Couleur de la bordure  */
+  padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+  width: 98.5%;   /* Permet d'ajuster la largeur du champ de saisie à 100% */
+  box-sizing: border-box;   /* Important */
+  font-family: Helvetica, sans-serif;   /* Police du texte */
+  font-size: 12px;   /* Taille de la police du texte */
+  font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+  letter-spacing: 1px;   /* Espacement des caractères */
+}
+
+/* Bouton valider */
+#rechercher #nomUtil-btn {
+  background-color: #E8B960;   /* Couleur de fond */
+  border-style: solid;   /* Style de la bordure  */
+  border-width: 1px;   /* Epaisseur de la bordure  */
+  border-color: #E8B960;   /* Couleur de la bordure  */
+  padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+  width: 98.5%;   /* Permet d'ajuster la largeur du champ de saisie à 100% */
+  box-sizing: border-box;   /* Important */
+  font-family: Helvetica, sans-serif;   /* Police du texte */
+  font-size: 17px;   /* Taille de la police du texte */
+  font-weight: gras;   /* Graisse du texte : normal = normal ; bold = gras */
+  letter-spacing: 2px;   /* Espacement des caractères */
+  margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
+  color: #ffffff;   /* Couleur du texte */
+}
+
+/* Bouton valider quand survolé par la souris */
+#searchthis #search-btn:hover {
+  background-color: #E8B960;   /* Couleur de fond */
+  color: #E8B960;   /* Couleur du texte */
+  cursor: pointer;   /* Apparence du curseur comme pour un lien */
+}
+
+
+#global{
+	z-index: 2;
+	position:relative;
+}
+
+#titre{
+	margin-top : 7%;
+	font-size: 50px;
+	margin-bottom: 5%;
+}
+
+#fond{
+position:absolute;
+width:100%;
+height:100%;
+z-index: 1;
+
+}
+
+#nomUtilisateur{
+	color : white;
+	margin-bottom: 19%;
+}
+
+
+.centrer {
+  margin: 0 auto;
+  width: 80%;
+  text-align:center;
+}
+
+#container{
+  margin: 0 auto;
+  width: 80%;
+  text-align:center;
+}
+
+#tri{
+  margin: 0 auto;
+  width: 70%;
+  text-align:center;
+}
+
+.cadre {
+   border-width:1px 1px 1px 1px;
+   border-style:solid;
+   border-color:black;
+
+
+ }
+
+
+ #cadre1{
+	 font-size: 25px;
+
+ }
+
+ .titrePartie{
+	 margin-top: 5%;
+	 margin-left: 10%;
+ }
+
+ #infosGenerales{
+	 margin-top: 10%;
+ }
+
+#infosPerso{
+	 padding-bottom: 7%;
+}
+
+#description{
+	 padding-bottom: 7%;
+}
+
+
+/*stats*/
+
+.chiffre{
+	font-size: 50px;
+}
+
+#DivCharts {
+	border-style: solid;
+	border-color: grey;
+}
+
+#chartContainer {
+	width:400px;
+	height:300px;
+	display:inline-block;
+	text-align:center;
+}
+
+#chartContainerColor {
+	width:400px;
+	height:300px;
+	display:inline-block;
+	text-align:center;
+}
+#chartContainerEvol {
+}
+
+/*Fstats*/
+
+
+
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #E8B960;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    width: 350px;
+    background-color: #333333;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------R A D I O      B U T T O N ----------------------------------------------------------------------*/
+.select {
+	position: relative;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.select select {
+	width: 100%;
+	padding: 10px 15px;
+	cursor: pointer;
+	color: #333333;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+	background: #e6e6e6;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+
+.radioButton {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size:18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioButton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radioButton:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioButton input:checked ~ .checkmark {
+    background-color:#333333	;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioButton input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioButton .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+
+
+/* ------------------------------------------------------------S E L E C T     B U T T O N ----------------------------------------------------------------------*/
+
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f2f2f2;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f2f2f2;
+	box-shadow:inset 0px 1px 0px 0px #f2f2f2;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f2f2f2), color-stop(1, #f2f2f2));
+	background:-moz-linear-gradient(top, #f2f2f2 5%, #f2f2f2 100%);
+	background:-webkit-linear-gradient(top, #f2f2f2 5%, #f2f2f2 100%);
+	background:-o-linear-gradient(top, #f2f2f2 5%, #f2f2f2 100%);
+	background:-ms-linear-gradient(top, #f2f2f2 5%, #f2f2f2 100%);
+	background:linear-gradient(to bottom, #f2f2f2 5%, #f2f2f2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#f2f2f2',GradientType=0);
+	background-color:#f2f2f2;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #f2f2f2;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c7bfc7;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #333333), color-stop(1, #333333));
+	background:-moz-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-webkit-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-o-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-ms-linear-gradient(top, #333333 5%, #333333 100%);
+	background:linear-gradient(to bottom, #333333 5%, #333333 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#333333',GradientType=0);
+	background-color:#333333;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #333333;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #333333;
+	box-shadow:inset 0px 1px 0px 0px #333333;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #333333), color-stop(1, #333333));
+	background:-moz-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-webkit-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-o-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-ms-linear-gradient(top, #333333 5%, #333333 100%);
+	background:linear-gradient(to bottom, #333333 5%, #333333 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#333333',GradientType=0);
+	background-color:#e8b960;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #333333;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c7bfc7;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #333333), color-stop(1, #333333));
+	background:-moz-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-webkit-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-o-linear-gradient(top, #333333 5%, #333333 100%);
+	background:-ms-linear-gradient(top, #333333 5%, #333333 100%);
+	background:linear-gradient(to bottom, #333333 5%, #333333 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#333333',GradientType=0);
+	background-color:#333333;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+/*------------------------------Load-------------------------------*/
+@keyframes lds-ellipsis3 {
+  0%, 25% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    left: 100px;
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes lds-ellipsis3 {
+  0%, 25% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    left: 100px;
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis {
+  0% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    left: 100px;
+  }
+  75% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes lds-ellipsis {
+  0% {
+    left: 32px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  25% {
+    left: 32px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    left: 100px;
+  }
+  75% {
+    left: 168px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    left: 168px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+.lds-ellipsis {
+  position: relative;
+}
+.lds-ellipsis > div {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+}
+.lds-ellipsis div > div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f00;
+  position: absolute;
+  top: 100px;
+  left: 32px;
+  -webkit-animation: lds-ellipsis 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  animation: lds-ellipsis 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+}
+.lds-ellipsis div:nth-child(1) div {
+  -webkit-animation: lds-ellipsis2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  animation: lds-ellipsis2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  background: rgba(86.66666666666667%,66.60507251166734%,14.50980392156862%,0.879);
+}
+.lds-ellipsis div:nth-child(2) div {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+  background: #6e6868;
+}
+.lds-ellipsis div:nth-child(3) div {
+  -webkit-animation-delay: -0.25s;
+  animation-delay: -0.25s;
+  background: #1c1b1b;
+}
+.lds-ellipsis div:nth-child(4) div {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  background: #000000;
+}
+.lds-ellipsis div:nth-child(5) div {
+  -webkit-animation: lds-ellipsis3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  animation: lds-ellipsis3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+  background: rgba(86.66666666666667%,66.60507251166734%,14.50980392156862%,0.879);
+}
+.lds-ellipsis {
+  width: 200px !important;
+  height: 200px !important;
+  -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
